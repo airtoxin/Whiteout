@@ -1,8 +1,9 @@
 package controllers
 
+import java.util.UUID
 import javax.inject._
-import play.api._
 import play.api.mvc._
+import whiteout.models.EpsilonGreedy
 
 /**
  * This controller creates an `Action` to handle HTTP requests to the
@@ -18,7 +19,8 @@ class HomeController @Inject() extends Controller {
    * a path of `/`.
    */
   def index = Action {
+    val eps = EpsilonGreedy(UUID.randomUUID, 0.5)
+    println(eps)
     Ok(views.html.index("Your new application is ready."))
   }
-
 }

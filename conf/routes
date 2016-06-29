@@ -11,3 +11,21 @@ GET     /message                    controllers.AsyncController.message
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+POST    /epsilon-greedy       @controllers.EpsilonGreedyController.create
+GET     /epsilon-greedy       @controllers.EpsilonGreedyController.list
+GET     /epsilon-greedy/:id  @controllers.EpsilonGreedyController.detail(id: String)
+PUT     /epsilon-greedy/:id  @controllers.EpsilonGreedyController.update(id: String)
+DELETE  /epsilon-greedy/:id  @controllers.EpsilonGreedyController.delete(id: String)
+
+POST    /softmax       @controllers.SoftmaxController.create
+GET     /softmax       @controllers.SoftmaxController.list
+GET     /softmax/:id  @controllers.SoftmaxController.detail(id: String)
+PUT     /softmax/:id  @controllers.SoftmaxController.update(id: String)
+DELETE  /softmax/:id  @controllers.SoftmaxController.delete(id: String)
+
+POST    /ucb1       @controllers.Ucb1Controller.create
+GET     /ucb1       @controllers.Ucb1Controller.list
+GET     /ucb1/:id  @controllers.Ucb1Controller.detail(id: String)
+PUT     /ucb1/:id  @controllers.Ucb1Controller.update(id: String)
+DELETE  /ucb1/:id  @controllers.Ucb1Controller.delete(id: String)
